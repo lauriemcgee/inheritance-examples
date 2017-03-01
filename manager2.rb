@@ -47,4 +47,8 @@ manager.print_info
 manager.give_all_raises
 p manager
 p manager.fire_all_employees
+p employee1.active
+
+
+
 
