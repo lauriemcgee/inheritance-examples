@@ -3,7 +3,7 @@ class Vehicle
     @speed = 0
     @direction = 'north'
   end
-  
+
   def brake
     @speed = 0
   end
@@ -28,3 +28,6 @@ class Car < Vehicle
     puts "Beeeeeeep!"
   end
 end
+
+car = Car.new
+car.honk_horn
