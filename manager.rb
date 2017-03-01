@@ -1,11 +1,11 @@
 class Employee
   attr_reader :first_name, :last_name, :active
   attr_writer :active
-  def initialize(input_first_name, input_last_name, input_salary, input_active)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @salary = input_salary
-    @active = input_active
+  def initialize(input_options)
+    @first_name = input_options[:first_name]
+    @last_name = input_options[:last_name]
+    @salary = input_options[:salary]
+    @active = input_options[:active]
   end
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} a year."
@@ -38,13 +38,21 @@ puts employee1.active
 
 
 class Manager < Employee
+  attr_reader :first_name, :last_name, :active
+  attr_writer :active
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
   def send_report
-    puts "Sending email..."
-    puts "Email Sent!"
+    puts "Sending email....."
+    puts "Email sent!"
   end
 end
 
-manager = Manager.new("Sharon","Yitbarek", 100000, "true")
+
+
+manager = Manager.new("Sharon","Yitbarek", 100000, "true", [employee1, employee2])
 
 puts manager.print_info
 puts manager.send_report
