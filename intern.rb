@@ -1,7 +1,9 @@
 module EmailReportable
-  puts "Sending email..."
+  def send_report
+    puts "Sending email..."
     # use email sending library...
-  puts "Email sent!"
+    puts "Email sent!"
+  end
 end
 
 
